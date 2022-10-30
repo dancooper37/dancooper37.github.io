@@ -1,0 +1,30 @@
+.sidenav {
+  width: 150px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 8px;
+}
+
+.sidenav a {
+  padding: 0px 8px 5px 16px;
+  display: block;
+}
+
+.main {
+  margin-left: 150px; /* Same as the width of the sidebar */
+}
+
+.vl {
+  border-left: 1px solid black;
+  height: 100%;
+  position: fixed;
+  left: 150px;
+  top: 0px;
+}
+
+h3 {
+    margin-top: 0;
+}
