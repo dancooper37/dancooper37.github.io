@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Side navigation -->
+<div class="sidenav">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+<div class="main">
+<h3 style="margin-bottom: 0px;"> The Effects of Ethanol on Embryonic Development in Zebrafish: A Viable Model for Foetal Alcohol Syndrome? </h3>
+<hr>
+<div class="report">
+<h4 style="margin-top: 0px;"> 1. Introduction </h4>
+<p>Prenatal exposure to alcohol is widely known to significantly increase the risk of developmental abnormalities in the human foetus. Current methods for diagnosis still rely on identification of developmental abnormalities, which can manifest with different severity and at different ages (O'Leary, 2004). The ongoing aim of research is to develop a diagnostic method that quantitatively assesses the extent of damage to the developing child, and establish whether there is a threshold of alcohol consumption required to effect the embryo.</p>
+<p> Attempts to use humans as models for FAS have presented numerous challenges, mostly caused by the inherent inability to have an accurate measurement of dose or length of exposure (Abel, 1981). Additionally, milder symptoms of FAS, characterised as alcohol related birth defects (ARBD) and alcohol-related neurodevelopmental disorder (ARND) (Stratton et al., 1996) can exhibit delayed onset.</p>
+<p> Naturally, animals models are the alternative such as rats or mice. Rats exhibit almost identical responses to prenatal alcohol exposure as humans (Driscoll et al., 1990). Issues have been noted, however, surrounding the use of rats and mice. Notably, Abel (1981) documents the inaccuracies that stress levels and behavioural habits of rodents can introduce into an investigation where constant monitoring of blood alcohol levels would be required.</p>
+<p> <i>Danio rerio</i> a.k.a. zebrafish are of particular interest to developmental biologists because of their fast growth and semi-transparent embryos (Bilotta and Saszik, 2001) as well as their significantly reduced maintenance cost in comparison to rodents (Avdesh et al., 2012).</p>
+<p> Herein we aim to investigate whether ethanol exposure can effect the embryonic development of zebrafish, and whether they have potential as a model for embryonic ethanol exposure in humans.</p>
+<hr>
+<h4 style="margin-top: 0px;"> 2. Method </h4>
+<p><i> 2.1 Embryo Sourcing </i></p>
+<p> Embryos were obtained for experimentation through natural breeding. Guidelines for this process, as well as the care and maintenance of zebrafish are outlined by Avdesh et al., (2012). </p>
+<p> Fertilised eggs were collected and split, in counts of 60, between petri dishes containing suitable water. Growth was permitted until dome stage was reached, approximately 5 hours post-fertilisation (hereon h.p.f.) </p>
+<p><i> 2.2 Alcohol exposure assay </i></p>
+<p> Each dish of embryos, was treated with either 0%, 1.5%, 2.0% or 2.5% (v/v) ethanol solution by means of replacing the existing water, before being left to grow for 24 hours. Once 29 h.p.f. was reached, the ethanol solutions were removed and replaced with tank water. Another 24 hours was allowed to elapse, resulting in a total embryo age of 54 h.p.f., before they were fixed with 4% paraformaldehyde in PBS. </p>
+<p> We stored fixed embryos at 4°C.</p>
+<p><i> 2.3 Specimen preparation </i></p>
+<p> Each specimen embryo was transferred to a well slide with a Pasteur pipette alongside 1 drop of the fixing solution. A mounted needle assisted in both orientation of the specimen and lowering a coverslip onto the slide without trapping pockets of air. Every slide was labelled with the corresponding alcohol treatment concentration.</p>
+<p><i> 2.3 Specimen analysis </i></p>
+<p> The embryos were observed under a light microscope, where comparisons were made between the specimen and control embryos, noting any significant morphological dissimilarities. Structures of interest included the eyes, heart and somites. Reference micrographs of healthy embryos, published by Kimmel et al. (1995), were also utilised.</p>
+<p> In order to perform a quantitative analysis, we also measured and recorded the nose-to-tail length of each specimen using an eyepiece graticule. </p>
+<p><i> 2.3 Statistical methods </i></p>
+<p> Our statistical tests were performed using R v4.1.1 for Windows, using only inbuilt packages (R Core Team, 2021).</p>
+<p> In this report, we chose to analyse the control and 2.5% ethanol (v/v) treated embryos. Variance was calculated, and normality checked via a Shapiro-Wilk test using R’s inbuilt functions. Our data showed is likely to be normal where α = 0.05, but both groups had a significantly dissimilar variance.</p>
+<p> Because of this, we chose to use Welch’s t-test to determine whether there was a statistically significant variation between the mean nose-to-tail lengths of the treated and untreated embryos. </p>
+<hr>
+<h4 style="margin-top: 0px;"> 3. Results </h4>
+<p><i> 3.1 Data overview </i></p>
+<figure>
+  <img src="table1.png" style="width:100%">
+  <figcaption>Figure 1 Descriptive statistics calculated from collected data where µ = mean, x̃ = median, σ = standard deviation and   σ<sup>2</sup> = variance.</figcaption>
+</figure> 
+<figure>
+  <img src="table2.png" style="width:100%">
+  <figcaption>Figure 2 Distribution of nose-to-tail lengths of each group of treated embryos. A) 0% ethanol B) 1.5% ethanol C) 2.0% ethanol D) 2.5% ethanol.</figcaption>
+</figure> 
+<figure>
+  <img src="table3.png" style="width:100%">
+  <figcaption>Figure 3 Boxplot depicting the distribution of nose-to-tail length of zebrafish embryos treated with varying concentrations of ethanol. Outliers marked where value lies further than 1.5x IQR outside of Q1 or Q3</figcaption>
+</figure> 
+<p><i> 3.1 Data analysis </i></p>
+<p> Normality was verified using a Shapiro Wilk test. Both 0% and 2.5% ethanol groups (see 2.4) returned p-values >> 0.05, suggesting they are normally distributed.</p>
+<figure>
+  <img src="table4.png" style="width:100%">
+  <figcaption>Figure 4 Results of Shapiro-Wilk test performed on nose-to-tail lengths of the 0% and 2.5% ethanol treated embryo groups. Where p > 0.05, the data is likely to be normally distributed.</figcaption>
+</figure> 
+<p> Variance was calculated, and found to be significantly different between the 0% and 2.5% ethanol groups (see Figure 1). This enabled the use of Welch’s t-test. </p>
+<p> We found that embryos treated with 2.5% ethanol (v/v) solution had significantly shorter nose-to-tail lengths than the 0% ethanol control group, t(42) = 19.5, p < 2.2x10-16.</p>
+<hr>
+<h4 style="margin-top: 0px;"> 4. Discussion </h4>
+<p> Our results clearly indicate that ethanol exposure negatively impacts the development of zebrafish embryos. This is aligned with findings from existing research by Blader and Strähle (1998), who document similar abnormalities in nose-to-tail length.</p>
+<p> Although not quantitatively analysed in this investigation, it can also be seen that exposure to lower concentrations of ethanol has a less pronounced developmental effect on the zebrafish embryo. This is similar to the subtler varieties of FAS such as ARBD or ARND (Stratton et al., 1996).</p>
+<p> Further investigation could involve exposure of zebrafish embryos to lower concentrations of ethanol to establish whether there is a measurable threshold at which ethanol begins to affect development. Billota et al. (2001) have already shown that the time of ethanol exposure in zebrafish alters the systems that abnormalities effect.</p>
+<p> It can be concluded that zebrafish may be a suitable model for Foetal Alcohol Syndrome, considering the ease of exposure control and absence of maternal behavioural interference when compared with rodents as well as the relative response to ethanol. However, until behavioural assessment can be made, zebrafish may not be suitable for modelling the more subtle effects of FAS.</p>
+<hr>
+<h4 style="margin-top: 0px;"> References </h4>
+<p> O'Leary, C. 2004. Fetal alcohol syndrome: Diagnosis, epidemiology, and developmental outcomes. Journal of Paediatrics and Child Health, 40 (1-2), 2-7.</p>
+<p> Abel, E. L. 1981. Behavioral teratology of alcohol. Psychological Bulletin, 90 (3), 564.</p>
+<p> Stratton, K., Howe, C., Battaglia, F. C., Syndrome, C. S. F. A. and Medicine, I. 1996. Fetal Alcohol Syndrome: Diagnosis, Epidemiology, Prevention, and Treatment, National Academies Press.</p>
+<p> Driscoll, C. D., Streissguth, A. P. and Riley, E. P. 1990. Prenatal alcohol exposure: comparability of effects in humans and animal models. Neurotoxicology and teratology, 12 (3), 231-237.</p>
+<p> Bilotta, J. and Saszik, S. 2001. The zebrafish as a model visual system. International Journal of Developmental Neuroscience, 19 (7), 621-629.</p>
+<p> Avdesh, A., Chen, M., Martin-Iverson, M. T., Mondal, A., Ong, D., et al. 2012. Regular Care and Maintenance of a Zebrafish (Danio rerio) Laboratory: An Introduction. JoVE, (69), 4196.</p>
+<p> Kimmel, C. B., Ballard, W. W., Kimmel, S. R., Ullmann, B. and Schilling, T. F. 1995. Stages of embryonic development of the zebrafish. Developmental Dynamics, 203 (3), 253-310.</p>
+<p> R Core Team 2021. "R: A Language and Environment for Statistical Computing". R Foundation for Statistical Computing: Vienna, Austria. https://www.R-project.org/</p>
+</div>
+<hr>
+<p> &copy 2022 Daniel Cooper All Rights Reserved </p>
+</div> 
+<div class="vl"></div>
+</body>
+</html> 

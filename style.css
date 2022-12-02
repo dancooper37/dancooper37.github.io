@@ -28,3 +28,7 @@
 h3 {
     margin-top: 0;
 }
+
+.report {
+  column-count: 3;
+}
