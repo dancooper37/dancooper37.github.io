@@ -31,4 +31,5 @@ h3 {
 
 .report {
   column-count: 3;
+  -moz-column-count: 3;
 }
